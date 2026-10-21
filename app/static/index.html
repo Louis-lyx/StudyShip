@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="StudyShip 高校课程本地知识库与个性化学习平台" />
+  <title>StudyShip · 高校课程学习平台</title>
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <div id="toast"></div>
+  <main id="auth" class="auth-shell">
+    <section class="brand-panel">
+      <div class="brand-mark">S</div>
+      <p class="eyebrow">KNOWLEDGE · EVIDENCE · MASTERY</p>
+      <h1>让每一本教材<br><span>成为可计算的知识地图</span></h1>
+      <p class="lead">教材建立稳定知识库，PPT、考纲和作业提供动态证据，学习计划随每位学生的掌握状态持续演化。</p>
+      <div class="feature-grid">
+        <div><b>一次解析</b><small>一门课程多人共享</small></div>
+        <div><b>证据驱动</b><small>每次调整可追溯</small></div>
+        <div><b>教师审核</b><small>AI 不替代课程判断</small></div>
+        <div><b>个性计划</b><small>重点、薄弱与遗忘融合</small></div>
+      </div>
+    </section>
+    <section class="auth-card">
+      <div class="auth-logo"><span>S</span> StudyShip</div>
+      <h2 id="auth-title">欢迎回来</h2>
+      <p class="muted" id="auth-subtitle">登录教师或学生工作台</p>
+      <form id="login-form">
+        <label>用户名<input id="login-user" autocomplete="username" required placeholder="请输入用户名" /></label>
+        <label>密码<input id="login-pass" type="password" autocomplete="current-password" required placeholder="请输入密码" /></label>
+        <button class="btn primary full" type="submit">登录 StudyShip</button>
+      </form>
+      <form id="register-form" class="hidden">
+        <div class="form-row"><label>用户名<input id="reg-user" required minlength="3" /></label><label>姓名<input id="reg-name" required /></label></div>
+        <label>密码<input id="reg-pass" type="password" required minlength="8" placeholder="至少 8 位" /></label>
+        <div class="form-row"><label>身份<select id="reg-role"><option value="student">学生</option><option value="teacher">教师</option></select></label><label>学号<input id="reg-no" placeholder="学生必填" /></label></div>
+        <button class="btn primary full" type="submit">创建账号</button>
+      </form>
+      <button id="auth-switch" class="link-btn">没有账号？注册</button>
+      <div class="demo-box"><b>演示账号</b><span>教师：demo_teacher</span><span>学生：demo_student</span><span>密码：StudyShip@2026</span></div>
+    </section>
+  </main>
+
+  <div id="app" class="app hidden">
+    <aside class="sidebar">
+      <div class="logo"><span>S</span><strong>StudyShip</strong></div>
+      <div class="course-chip"><small>当前课程</small><select id="course-select"></select></div>
+      <nav id="nav"></nav>
+      <div class="sidebar-bottom">
+        <div class="user-chip"><div id="avatar">U</div><div><b id="user-name">—</b><small id="user-role">—</small></div></div>
+        <button id="logout" class="icon-btn" title="退出">↪</button>
+      </div>
+    </aside>
+    <section class="workspace">
+      <header class="topbar"><div><p class="eyebrow" id="page-kicker">STUDYSHIP</p><h2 id="page-title">工作台</h2></div><div class="top-actions"><span id="llm-status" class="status-pill">AI 检测中</span><button id="refresh" class="btn ghost">刷新</button></div></header>
+      <div id="view" class="view"></div>
+    </section>
+  </div>
+
+  <div id="modal" class="modal hidden"><div class="modal-card"><button id="modal-close" class="modal-close">×</button><div id="modal-body"></div></div></div>
+  <script src="/assets/app.js"></script>
+</body>
+</html>

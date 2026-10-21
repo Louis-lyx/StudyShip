@@ -1,0 +1,1 @@
+"""StudyShip domain services."""
