@@ -1,0 +1,7 @@
+fastapi==0.119.0
+uvicorn[standard]==0.38.0
+sqlalchemy==2.0.44
+python-multipart==0.0.20
+pymupdf==1.26.5
+httpx==0.28.1
+pytest==8.4.2
